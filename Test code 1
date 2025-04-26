@@ -1,1 +1,18 @@
+#Q1.
+There are n houses build in a line, each of which contains some value in it.
+A thief is going to steal the maximal value of these houses, but he can’t steal in two adjacent houses because the owner of the stolen houses will
+tell his two neighbors left and right side.
+What is the maximum stolen value?
 
+
+def maxsteal(val):
+    def helper(n):
+        if n <= 0:
+            return 0
+        if n == 1:
+            return val[0]
+        return max(val[n-1] + helper(n-2), helper(n-1))
+    return helper(len(val))
+val = [6, 7, 1, 3, 8, 2, 5]
+print(maxsteal(val))
+Output: 20
