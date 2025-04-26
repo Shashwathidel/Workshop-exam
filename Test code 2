@@ -1,1 +1,23 @@
+Q2.
+Print the pattern
+11112
+32222
+33334
+54444
+55556
 
+
+
+for i in range(5):
+    for j in range(5):
+        if i % 2 == 0:
+            print(i + 1, end="")
+        else:
+            print(j + 1 if i == 1 else 5 - j, end="")
+    print()
+output:
+11112
+32222
+33334
+54444
+55556
